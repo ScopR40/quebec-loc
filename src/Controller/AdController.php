@@ -36,6 +36,8 @@ class AdController extends AbstractController
     public function create(Request $request, ObjectManager $manager){ //$request représente le POST
       $ad = new Ad(); //nouvelle annonce
 
+      $ad->setAuthor($this->getUser()); // l'user connecté est l'auteur de cet annonce
+
       $form = $this->createForm(AnnonceType::class, $ad); //demande la creation du formulaire
 
       $form->handleRequest($request); //fait le lien entre les champs du form pour les mettres dans le $ad
@@ -45,6 +47,7 @@ class AdController extends AbstractController
             $image->setAd($ad); //dit a quel annonce elle appartient
             $manager->persist($image); //$manager fait persisté cette image
          }
+
          $manager->persist($ad); //$manager fait persisté la nouvelle annonce
          $manager->flush(); //$manager enregistre la nouvelle annonce  dans la base de données
 
@@ -67,7 +70,7 @@ class AdController extends AbstractController
      * Permet d'afficher le formulaire d'édition
      *
      * @Route("/ads/{slug}/edit", name="ads_edit")
-     * 
+     *
      * @return Response
      */
     public function edit(Ad $ad, Request $request, ObjectManager $manager){
@@ -81,6 +84,7 @@ class AdController extends AbstractController
             $image->setAd($ad); //dit a quel annonce elle appartient
             $manager->persist($image); //$manager fait persisté cette image
          }
+
          $manager->persist($ad); //$manager fait persisté la nouvelle annonce
          $manager->flush(); //$manager enregistre la nouvelle annonce  dans la base de données
 
