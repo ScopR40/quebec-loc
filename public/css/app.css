@@ -13,6 +13,12 @@ div.adtitle h1, div.adtitle p {
    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }
 
+div.ad-title .btn {
+   margin-top: 2em;
+   font-size: 1.5em;
+   line-height: 1.5em;
+}
+
 div.carousel-caption {
    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }
@@ -37,6 +43,19 @@ footer p {
    max-height: 24px;
 }
 
+.avatar-micro {
+   max-width: 22px;
+   max-height: 22px;
+}
+
 .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
    color: firebrick !important;
+}
+
+span.rating i {
+   color: goldenrod;
+}
+
+.alert a {
+   text-decoration: none;
 }

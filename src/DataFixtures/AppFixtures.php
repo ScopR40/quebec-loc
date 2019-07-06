@@ -8,6 +8,7 @@ use App\Entity\Role;
 use App\Entity\User;
 use App\Entity\Image;
 use App\Entity\Booking;
+use App\Entity\Comment;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -33,7 +34,7 @@ class AppFixtures extends Fixture
        $adminUser->setFirstName('Sébastien')
                  ->setLastName('Duforet')
                  ->setEmail('seb@symfony.com')
-                 ->setHash($this->encoder->encodePassword($adminUser, 'password')) //encode le password
+                 ->setHash($this->encoder->encodePassword($adminUser, 'azertyuiop')) //encode le password
                  ->setPicture('https://avatars.io/twitter/ScopR')
                  ->setIntroduction($faker->sentence()) //faker créer une introduction
                  ->setDescription('<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>') //faker créer une description de 3 paragraphes au format html
@@ -121,6 +122,17 @@ class AppFixtures extends Fixture
                       ->setComment($comment); //le commentaire
 
                $manager->persist($booking); //manager fait psersité cette réservation
+
+               //Gestion des commentaires
+               if(mt_rand(0, 1)) {
+                  $comment = new Comment(); //creation nouveau commentaire
+                  $comment->setContent($faker->paragraph()) // $faker créer un paragraphe
+                          ->setRating(mt_rand(1, 5)) // note aléatoire entre 1 et 5
+                          ->setAuthor($booker) // l'auteur c'est celui qui a réservé
+                          ->setAd($ad); //l'annonce
+
+                  $manager->persist($comment); //manager fait persisté le commentaire
+               }
            }
 
            $manager->persist($ad); //demande a $manager de faire persisté l'annonce($ad)
