@@ -9,20 +9,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\PaginationService;
 
 class AdminCommentController extends AbstractController
 {
     /**
-     * @Route("/admin/comments", name="admin_comment_index")
+     * @Route("/admin/comments/{page<\d+>?1}", name="admin_comment_index")
      */
-    public function index(CommentRepository $repo)
+    public function index(CommentRepository $repo, $page, PaginationService $pagination)
     {
-      //  $repo = $this->getDoctrine()->getRepository(Comment::class);
-
-       $comments = $repo->findAll();
+        $pagination->setEntityClass(Comment::class)
+                  ->setPage($page);
 
         return $this->render('admin/comment/index.html.twig', [
-            'comments' => $comments,
+           'pagination' => $pagination
         ]);
     }
 
