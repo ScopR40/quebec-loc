@@ -27,7 +27,7 @@ class AdminBookingController extends AbstractController
     }
 
     /**
-     * Permet d'éditer un eréservation
+     * Permet d'éditer une réservation
      *
      * @Route("/admin/bookings/{id}/edit", name="admin_booking_edit")
      *
@@ -58,8 +58,8 @@ class AdminBookingController extends AbstractController
     }
 
     /**
-     * Permet de supprimer une réservation 
-     * 
+     * Permet de supprimer une réservation
+     *
      * @Route("/admin/bookings/{id}/delete", name="admin_booking_delete")
      *
      * @return Response

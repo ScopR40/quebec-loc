@@ -107,7 +107,7 @@ class User implements UserInterface
      *
      * @ORM\PrePersist
      * @ORM\PreUpdate
-     * 
+     *
      * @return void
      */
     public function initializeSlug() {

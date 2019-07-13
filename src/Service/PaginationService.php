@@ -90,7 +90,7 @@ class PaginationService {
    * Permet de récupérer le templatePath actuellement utilisé
    *
    * @return string
-   */ 
+   */
    public function getTemplatePath(): string {
       return $this->templatePath;
    }
@@ -118,7 +118,7 @@ class PaginationService {
 
    /**
    * Permet d'afficher le rendu de la navigation au sein d'un template twig !
-   * 
+   *
    * On se sert ici de notre moteur de rendu afin de compiler le template qui se trouve au chemin
    * de notre propriété $templatePath, en lui passant les variables :
    * - page  => La page actuelle sur laquelle on se trouve
@@ -126,7 +126,7 @@ class PaginationService {
    * - route => le nom de la route à utiliser pour les liens de navigation
    *
    * Attention : cette fonction ne retourne rien, elle affiche directement le rendu
-   * 
+   *
    * @return void
    */
    public function display() {
@@ -139,11 +139,11 @@ class PaginationService {
 
    /**
    * Permet de récupérer le nombre de pages qui existent sur une entité particulière
-   * 
+   *
    * Elle se sert de Doctrine pour récupérer le repository qui correspond à l'entité que l'on souhaite
    * paginer (voir la propriété $entityClass) puis elle trouve le nombre total d'enregistrements grâce
    * à la fonction findAll() du repository
-   * 
+   *
    * @throws Exception si la propriété $entityClass n'est pas configurée
    */
    public function getPages() {
@@ -164,11 +164,11 @@ class PaginationService {
 
    /**
      * Permet de récupérer les données paginées pour une entité spécifique
-     * 
+     *
      * Elle se sert de Doctrine afin de récupérer le repository pour l'entité spécifiée
      * puis grâce au repository et à sa fonction findBy() on récupère les données dans une 
      * certaine limite et en partant d'un offset
-     * 
+     *
      * @throws Exception si la propriété $entityClass n'est pas définie
      *
      * @return array

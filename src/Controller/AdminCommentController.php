@@ -57,7 +57,7 @@ class AdminCommentController extends AbstractController
 
     /**
      * Permet de supprimer un commentaire
-     * 
+     *
      * @Route("/admin/comments/{id}/delete", name="admin_comment_delete")
      *
      * @param Comment $comment

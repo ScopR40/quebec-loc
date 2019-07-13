@@ -29,7 +29,7 @@ class AdminAdController extends AbstractController
 
     /**
      * Permet d'afficher le formulaire d'édition
-     * 
+     *
      * @Route("/admin/ads/{id}/edit", name="admin_ads_edit")
      *
      * @param Ad $ad
@@ -58,7 +58,7 @@ class AdminAdController extends AbstractController
 
     /**
      * Permet de supprimer une annonce
-     * 
+     *
      * @Route("/admin/ads/{id}/delete", name="admin_ads_delete")
      *
      * @param Ad $ad
@@ -74,7 +74,7 @@ class AdminAdController extends AbstractController
        }else {
           $manager->remove($ad); //manager supprime cette annonce
           $manager->flush(); //confirme la suppression de l'annonce dans la base de données
-    
+
           $this->addFlash(
              'success',
              "L'annonce <strong>{$ad->getTitle()}</strong> a bien été supprimée !"

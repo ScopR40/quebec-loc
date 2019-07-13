@@ -1,4 +1,6 @@
-div.container {
+@import url('./bootstrap.min.css');
+
+div.container, div.container-fluid {
    margin-top: 20px;
 }
 
@@ -6,17 +8,17 @@ div.adtitle {
    padding: 2em;
    background-size: cover;
    background-position: center center;
-}
 
-div.adtitle h1, div.adtitle p {
-   color: white;
-   text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-}
+   h1, p {
+      color: white;
+      text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+   }
 
-div.ad-title .btn {
-   margin-top: 2em;
-   font-size: 1.5em;
-   line-height: 1.5em;
+   .btn {
+      margin-top: 2em;
+      font-size: 1.5em;
+      line-height: 1.5em;
+   }
 }
 
 div.carousel-caption {
@@ -31,21 +33,21 @@ footer p {
    max-width: 128px;
    max-height: 128px;
    border-radius: 50%;
-}
 
-.avatar-medium {
-   max-width: 64px;
-   max-height: 64px;
-}
+   &.avatar-medium {
+      max-width: 64px;
+      max-height: 64px;
+   }
 
-.avatar-mini {
-   max-width: 24px;
-   max-height: 24px;
-}
+   &.avatar-mini {
+      max-width: 24px;
+      max-height: 24px;
+   }
 
-.avatar-micro {
-   max-width: 22px;
-   max-height: 22px;
+   &.avatar-micro {
+      max-width: 22px;
+      max-height: 22px;
+   }
 }
 
 .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {

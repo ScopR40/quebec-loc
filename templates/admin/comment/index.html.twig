@@ -23,7 +23,7 @@
             <tr>
                <td>{{comment.id}}</td>
                <td>{{comment.createdAt|date('d/m/Y H:i')}}</td>
-               <td><img src="{{comment.author.picture}}" alt="" class="avtar avatar-micro"> {{comment.author.fullName}}</td>
+               <td><img src="{{comment.author.picture}}" alt="" class="avatar avatar-micro"> {{comment.author.fullName}}</td>
                <td>{{comment.content}}</td>
                <td>
                   <span class="badge badge-dark">{{comment.rating}}</span>
@@ -41,7 +41,7 @@
             {% endfor %}
          </tbody>
       </table>
-      
+
       {{ pagination.display() }}
    </div>
 {% endblock %}

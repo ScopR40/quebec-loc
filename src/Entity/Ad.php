@@ -101,7 +101,7 @@ class Ad
      *
      * @ORM\PrePersist
      * @ORM\PreUpdate
-     * 
+     *
      * @return void
      */
     public function initializeSlug() {

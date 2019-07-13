@@ -45,8 +45,8 @@ class Comment
     private $author;
 
     /**
-     * Permet de mettre en place la date de création 
-     * 
+     * Permet de mettre en place la date de création
+     *
      * @ORM\PrePersist
      *
      * @return void
